@@ -1,0 +1,875 @@
+%
+% Carátula para 75.02 / 95.11 Algoritmos y Programación I.
+%
+% Basado en el template realizado por Diego Essaya, disponible en
+%                                                         http://lug.fi.uba.ar
+% Modificado por Sebastián Santisi.
+% 2007: Modificado por Patricio Moreno y Michel Peterson.
+% 2014: Modificado por Patricio Moreno.
+% 2017: Modificado por Patricio Moreno.
+
+% Acá se define el tamaño de letra principal:
+% Para utilizar los estilos de KOMA-script, descomentar la línea siguiente y
+% comentar la que le sigue (dejar sin comentar un único documentclass)
+%\documentclass[10pt, spanish]{scrartcl}
+\documentclass[a4paper, 10pt, spanish]{article}
+\usepackage{color}
+\definecolor{cadet}{rgb}{0.33, 0.41, 0.47}
+\definecolor{orange}{rgb}{0.93, 0.53, 0.18}
+\definecolor{carminered}{rgb}{1.0, 0.0, 0.22}
+\definecolor{green}{rgb}{0.33, 0.42, 0.18}
+\definecolor{darkmagenta}{rgb}{0.55, 0.0, 0.55}
+\usepackage{anysize}
+\usepackage{biblatex}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{array} % 1
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\usetikzlibrary{calc,decorations.pathmorphing,patterns}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{SIunits}
+\usepackage{listings}
+\usepackage{pgfplots,filecontents}
+\pgfplotsset{compat=1.7}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+\usepackage[siunitx]{circuitikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{cleveref}
+
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{asmath}
+
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0.4cm,
+     framesep=0pt,
+     rulesep=.4pt,
+     backgroundcolor=,
+     rulesepcolor=\color{cadet},
+     %
+     stringstyle=\ttfamily\color{cadet}, %ttfamily
+     showstringspaces = false,
+     basicstyle=\small\ttfamily,    %ttfamily
+     commentstyle=\itshape\color{cadet},
+     keywordstyle=\small\ttfamily\color{cadet},
+     identifierstyle=,
+     %        
+     numbers=left,
+     numbersep=15pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+     inputencoding=utf8,
+     extendedchars=true,
+    literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1,
+   }
+
+\usepackage{babel}  % contiene la correcta separación en sílabas del español
+\usepackage[utf8x]{inputenc}    % porque el encoding del documento es UTF-8
+\usepackage{subfigure}
+
+
+\usepackage{floatrow}
+
+\usepackage{amsmath, amsfonts, amssymb}
+\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+
+\usepackage{fancyhdr}   % Para poder personalizarlo
+\usepackage{lastpage}   % Para poder saber cuántas páginas tiene el documento
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{}{\thesection\ \ #1}}
+\fancyhead{}	% Elimino el contenido del encabezado
+% El siguiente texto a la derecha (izquierda) en páginas pares (impares)
+\fancyhead[RE,LO]{82.03 - Física III - Informe de Laboratorio}
+\fancyhead[R]{FIUBA}
+
+\fancyfoot{}	% Elimino el contenido del pie de página
+% A la izquierda (derecha) en páginas pares (impares): nro. de página / total
+\fancyfoot[LE,RO]{\thepage/9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hipervínculos (enlaces) en el documento (y modificación de atributos)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{caption}
+\captionsetup[table]{belowskip=0.5cm}
+
+
+\usepackage{url}
+\urlstyle{tt}
+\usepackage[colorlinks=true,linkcolor=black, urlcolor=blue]{hyperref}
+\hypersetup{
+    breaklinks,
+    baseurl       = http://,
+    pdfborder     = 0 0 0,
+    pdfpagemode   = UseNone,
+    pdfstartpage  = 1,
+    pdfcreator    = {Plantilla de informe de TP para \LaTeX{}},
+    bookmarksopen = true,
+    bookmarksdepth= 2,% to show sections and subsections
+    pdfauthor     = {González},
+    pdftitle      = {Física III - Informe 1},
+    pdfsubject    = {Informe},
+    pdfkeywords   = {}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LISTAS (para poder modificar los 'bullets' de las listas)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLAS (para que se vean bien)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IMÁGENES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Para incluir imágenes, el siguiente código carga el paquete graphicx
+% según se esté generando un archivo dvi o un pdf (con pdflatex).
+
+% Para generar dvi, descomentá la linea siguiente:
+%\usepackage[dvips]{graphicx}
+
+% Para generar pdf, descomentá las dos lineas seguientes:
+\usepackage{graphicx}
+\pdfcompresslevel=9
+
+% Todas las imágenes están en el directorio imgs:
+\newcommand{\imgdir}{imgs}
+\graphicspath{{\imgdir/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage{blindtext}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMANDOS UTILES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% los siguientes comandos permiten escribir de manera uniforme en todo el
+% documento
+
+% Para poder manejar los espacios al final de los comandos propios
+\usepackage{xspace}
+
+% Abreviatura de 'número' utilizando letras voladas (correcto español)
+\newcommand{\Nro}{N.\textsuperscript{o}\xspace}
+\newcommand{\nro}{n.\textsuperscript{o}\xspace}
+
+
+\pgfdeclareradialshading{myring}{\pgfpointorigin}
+{
+color(0cm)=(transparent!0);
+color(5mm)=(pgftransparent!50);
+color(1cm)=(pgftransparent!100)
+}\pgfdeclarefading{ringo}{\pgfuseshading{myring}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INICIO DEL DOCUMENTO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\mymeter}[2] 
+{  % #1 = name , #2 = rotation angle
+\begin{scope}[transform shape,rotate=#2]
+\draw[thick] (#1)node(){$\mathbf V$} circle (11pt);
+\draw[rotate=45,-latex] (#1)  +(-17pt,0) --+(17pt,0);
+\end{scope}
+}
+
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+\usepackage[T1]{fontenc}
+\usepackage{subcaption}
+\usepackage{mathtools}
+
+\pgfdeclaredecoration{penciline}{initial}{
+    \state{initial}[width=+\pgfdecoratedinputsegmentremainingdistance,auto corner on length=1mm,]{
+        \pgfpathcurveto%
+        {% From
+            \pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}
+                            {\pgfdecorationsegmentamplitude}
+        }
+        {%  Control 1
+        \pgfmathrand
+        \pgfpointadd{\pgfqpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+                        {\pgfqpoint{-\pgfdecorationsegmentaspect\pgfdecoratedinputsegmentremainingdistance}%
+                                        {\pgfmathresult\pgfdecorationsegmentamplitude}
+                        }
+        }
+        {%TO 
+        \pgfpointadd{\pgfpointdecoratedinputsegmentlast}{\pgfpoint{1pt}{1pt}}
+        }
+    }
+    \state{final}{}
+}
+
+
+\usepackage{pgfplots,filecontents}
+\pgfplotsset{compat=1.7}
+
+\begin{filecontents*}{mydata.dat}
+nodes     x         y       label
+1 0.018569533817705 0.088024025001441 a
+2 0.018569533817705 0.087269511754017 a
+3 0.018569533817705 0.089154936115032 a 
+  
+  
+  
+3 0.016975995936626 0.088401110308417 a
+4 0.016975995936626 0.088589609942373 a
+5 0.016975995936626 0.085948023391565 a
+  
+6 0.016054032476698 0.07894068275391 a
+7 0.016054032476698 0.081217359753394 a 
+8 0.016054032476698 0.082733022584054 a
+  
+9 0.015041420939905 0.072851564487663 a
+10 0.015041420939905 0.0707526393104 a
+11 0.015041420939905 0.071516217055788 a
+  
+12 0.014359163172355 0.070179709701753 a
+13 0.014359163172355 0.070561686133447 a
+14 0.014359163172355 0.0707526393104 a
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{mydata2.dat}
+nodes     x         y       label
+1 0.018569533817705 0.049620554851048 b
+2 0.018569533817705 0.053094579452279 b
+3 0.018569533817705 0.049427391082431 b
+  
+  
+  
+4 0.016975995936626 0.047301502827994 b
+5 0.016975995936626 0.047108143099361 b
+6 0.016975995936626 0.047494846573819 b 
+  
+7 0.016054032476698 0.048847799968558 b 
+8 0.016054032476698 0.044593041015902 b
+9 0.016054032476698 0.04981370188016 b
+  
+10 0.015041420939905 0.041300234076028 b
+11 0.015041420939905 0.038585457161356 b
+12 0.015041420939905 0.039167417368877 b
+  
+13 0.014359163172355 0.040718721293241 b
+14 0.014359163172355 0.040330976919989 b
+15 0.014359163172355 0.041300234076028 b
+
+\end{filecontents*}
+
+
+
+
+
+
+
+\begin{document}
+
+\marginsize{2cm}{2cm}{2cm}{2cm}
+
+%
+% Hago que las páginas se comiencen a contar a partir de aquí:
+%
+\setcounter{page}{1}
+
+%
+% Pongo el índice en una página aparte:
+%
+
+
+%
+% Inicio del TP:
+%
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE{\bfseries Determinación de las distancias interplanares del grafito policristalino por difracción de electrones}}\\
+\vspace{0.3cm	}
+{\LARGE{\bfseries 82.03 Física III - FIUBA}}\\
+%{\large{\bfseries 82.03 Física III - FIUBA}}\\
+{\large{\bfseries 1\textsuperscript{er} Cuatrimestre - 2019}}
+\end{center}
+
+\hspace
+
+\begin{center}
+{\large{\textfont{José F. González - 100063 - \footnotesize{\verb!<jfgonzalez@fi.uba.ar>!}}}}\\
+{\large{\textfont{Erwin Zambrana - 94999 - \footnotesize{\verb!<erwinauta@gmail.com>!}}}}\\
+\end{center}
+
+\begin{center}
+{\large{\textfont{Atento a: Oscar E. Martínez, Gustavo Sánchez}}}\\
+\end{center}
+
+%\begin{flushleft}
+%{\large{\bfseries Atento a:} \hspace{0.1cm} \large{\textfont{Profs. Martinez, Sanchez, Grinblat}}}\\
+%\end{flushleft}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Resumen}
+Buscamos describir la distancia interplanar de una muestra de \textbf{grafito policristalino} mediante el fenómeno de difracción de un haz de electrones que lo atraviesa, recurriendo a la descripción ondulatoria del electrón. Se propone e implementa un método para analizar digitalmente el espectro de difracción como una mejora de precisión en la determinación de las distancias interplanares con respecto a los métodos visuales.
+
+\section{Introducción}
+
+\begin{figure}[h]
+    \begin{center}
+      \begin{tikzpicture}[scale=0.8]
+        \foreach \i in {0,...,1} 
+            \foreach \j in {0,...,1} {
+              \foreach \a in {0,120,-120} \draw [thick] (3*\i,2*sin{60}*\j) -- +(\a:1);
+              \foreach \a in {0,120,-120} \draw [thick] (3*\i+3*cos{60},2*sin{60}*\j+sin{60}) -- +(\a:1);}
+          \draw [dashed] (-2,1.73) -- (6,1.73);
+          \draw [dashed] (-2,0.865) -- (6,0.865);
+          \draw [latex-latex] (-2,0.865) -- (-2,1.73) node[left]{$d_1$};
+          \draw [dashed] (1.5,-1) -- (1.5,4); 
+          \draw [dashed] (3,-1) -- (3,4);
+          \draw [latex-latex] (1.5,4) -- (3,4) node[above]{$d_2$};
+      \end{tikzpicture}
+      \hspace{1cm}
+      \begin{tikzpicture}[scale=1.2]
+        
+        \draw [dashed] (0,0) -- (3,0);
+        \draw [dashed] (0,-1) -- (3,-1);
+
+        \draw [thick,latex-latex] (-0.5,-1) -- (-0.5,0);
+        \draw [thick] (-0.5,-0.5) node(c)[left] {$d$};
+
+        \draw [thick,blue,-latex] (0,2) -- (1.5,0) -- (3,2);
+        \draw [thick,blue,-latex] (0,1) -- (1.5,-1) -- (3,1);
+
+        \draw [red,thick,-latex] (2.5,-1) arc (0:60:0.9) ;
+        \draw [red,thick] (2.5,-0.5) node(a)[right]{$\theta$};
+
+        \draw [red,thick,-latex] (0.9,-0.2) arc (120:180:0.9) ;
+        \draw [red,thick] (0.5,-0.5) node(b)[left]{$\theta$};
+
+
+      \end{tikzpicture}
+    \end{center}
+    \caption{\textbf{Izquierda:} Primeras distancias interplanares de un cristal de grafito. \textbf{Derecha:} Cristal en condición de Bragg para la reflexión del haz de electrones.}
+    \label{fig:distanciasinterplanares}
+    \end{figure}
+
+Una muestra de grafito policristalino está compuesta por varios pequeños cristales de estructuras hexagonales en capas orientados aleatoriamente en el espacio. Cada cristal puede ser descripto por dos distancias interplanares $d_1$ y $d_2$ como se muestra en la Figura 1. Cuando se hace incidir un haz de electrones sobre uno de estos cristales este refleja las ondas asociadas a los electrones. Para alguno de estos cristales su orientación en el espacio es tal que el ángulo incidente es igual al ángulo de reflexión, decimos que estos cristales cumplen la \textbf{condición de Bragg}. Bajo esta condición los máximos de interferencia para estos cristales satisfacen
+
+\begin{equation}
+2d\cdot sen(\theta) = n\cdot \lambda
+\end{equation}
+
+donde $d$ es alguna distancia interplanar, $\theta$ el ángulo de incidencia, $n$ el orden del máximo y $\lambda$ la longitud de onda asociada al electrón. Los demás cristales que no satisfacen tal condición no generan interferencia constructiva y no determinan un patron visible. Si se puede proyectar el patrón de interferencia sobre una superficie esférica, como se muestra en la Figura 2, \textbf{podemos obtener un método de medición para la distancia interplanar $d$ mediante relaciones trigonométricas de su proyección} según
+
+\begin{equation} \label{eqn:trig}
+d = \frac{n\cdot \lambda}{2} \times \frac{1}{sin(0,5 \cdot arctan(\frac{D}{4R}))} \nonumber
+\end{equation}
+
+La longitud de onda se puede determinar si conocemos que el haz de electrones está siendo acelerado por un potencial $\Phi$, tal que la relación de energía cinética y potencial es
+
+\begin{equation} 
+\frac{p^2}{2m} = \frac{1}{2}mv^2 = e\cdot \Phi \nonumber
+\end{equation}
+
+
+
+
+
+con $m$ la masa del electrón, $v$ su rapidez y $e$ su carga. Luego usando el \textbf{postulado de de Broglie} obtenemos la distancia interplanar $d$ en función de parémetros mensurables $D$, $R$ y $\Phi$
+
+\begin{equation} \label{eq:longonda}
+\lambda = \frac{h}{p} = \frac{h}{\sqrt{2m\cdot e \Phi}}  \nonumber
+\end{equation}
+
+\begin{equation} \label{eq:dist}
+\Rightarrow d = \frac{nh}{2\sqrt{2m\cdot e \Phi}} \times \frac{1}{sin(0,5 \cdot arctan(\frac{D}{4R}))}
+\end{equation}
+
+
+\section{Banco de Medición}
+
+
+\begin{figure}[h]
+    \begin{center}
+      \begin{circuitikz}
+                                         \draw
+                                          (0,4) to[american voltage source] (0,0)  node [ground];
+                                         \draw 
+                                          (0,4) to [short] (1,4) to[R] node(c) [right] {$R_1$} (1,2) to[R] node(d) [right] {$R_2$} (1,0) node[ground];
+                                        \draw 
+                                          (1,4) to[R] (3,4) to [short,-o] (3,4) node(h) [above]{$\Phi$};
+                                          %\mymeter{M}{0}
+                                          \draw 
+                                          (2.5,3.5) node(h) {$10\ M\Omega$};
+                                            \end{circuitikz}\hspace{1.5cm}\begin{tikzpicture}[scale=1]
+                                          }
+         \draw [thick,blue] (0,0) arc (-140:140:2);
+
+         \draw [thick,blue] (0,0) -- (-4,0);
+         \draw [thick,blue] (0,2.6) -- (-4,2.6);
+
+
+         \draw [thick] (-0.47,0.56) -- (-0.47,2);
+         \draw [thick] (-1,0.56) -- (-1,2);
+            \draw [thick] (-0.47,2) -- (-1,2);
+         \draw [thick] (-1.2,0.56) -- (-1.2,2);
+         \draw [thick] (-1.73,0.56) -- (-1.73,2);
+            \draw [thick] (-0.47,0.56) -- (-1,0.56);
+            \draw [thick] (-1.2,0.56) -- (-1.73,0.56);
+            \draw [thick] (-1.2,2) -- (-1.73,2);
+
+         \draw [thick] (-1.465,2) -- (-1.465,3) node (d) [above] {$\Phi$}; 
+         \draw [thick] (-1.465,0.56) -- (-1.465,-0.3) -- (-0.735,-0.3); 
+
+
+         \draw [thick] (-0.735,2) -- (-0.735,2.9) -- (-1.465,2.9);
+         \draw [thick] (-0.735,0.56) -- (-0.735,-0.44); \draw (-0.735,-0.44) node (c) [below] {$G_3$};
+
+        \draw [thick] (-2.5,-0.44) -- (-2.5,2); \draw (-2.5,-0.44) node(b) [below] {$G_2$};
+        \draw [thick] (-3,-0.44) -- (-3,2); \draw (-3,-0.44) node(a) [below] {$G_1$};
+
+        \draw [thick] (-4,0.5) arc (-70:70:0.75)  node (e) [left] {$H$};
+
+
+         \draw [dashed] (-3,1.28) -- (-0.47,1.28);
+
+
+         \draw (-0.47,1.28) -- (3.26,2.28);
+         \draw (-0.47,1.28) -- (3.26,0.28);
+         \draw (3.26,2.28) -- (3.26,0.28); 
+         \draw [dashed] (-0.47,1.28) -- (3.26,1.28);
+
+         \draw [latex-latex,red] (4,0.28) -- (4,2.28);
+         \draw [red] (4,1.28) node[right] {$D$};
+
+         \draw [latex-latex,red] (1.53,1.28) -- (3.26,0.28);
+         \draw [red] (2.2,1) node[right] {$R$};
+
+        \draw [red,-latex] (1.4,1.28) arc (0:30:1) ;
+        \draw [red] (1.6,1.3) node[above=1] {\small$2\theta$};
+
+
+
+      \end{tikzpicture}
+
+    \end{center}
+    \caption{\textbf{Izquierda:} Fuente de tensión 0 a $10\ kV\ DC$ HV-NETZGERAT con divisor resistivo. \textbf{Derecha:} Tubo de difracción PHYWE 06721.00.}
+    \label{fig:distanciasinterplanares}
+    \end{figure}
+\caption{Banco de medición para $R_{OUT}$.}
+\end{figure}
+
+
+
+Para realizar las mediciones del diámetro anular con el cuál se determinará la distancia interplanar se utilizó el banco de medición de la Figura 2. Este está compuesto por un sistema de aceleración y enfoque del haz de electrones hacía la muestra de grafito policristalino por etapas:
+\begin{itemize}
+\item $H$: Generación del haz en un cátodo caliente conectado a $6.3\ V \ AC$.
+\item $G_1$: Enfoque inicial. Opera entre $0\ V$ y $-50\ V$. $G_1$ es el limitador de corriente que atraviesa el tubo.
+\item $G_2$: Aceleración inicial. Opera a $+300\ V$.
+\item $\Phi$: Aceleración fuerte. Opera a $1\ kV$ y $10\ kV$.
+\item $G_4$: Enfoque de lentes electrónicas hacía el grafito. Opera entre $0 \ V$ y $300\ V$.  
+\end{itemize}  
+
+El diametro de los anillos se mide en primera instancia sobre la superficie esférica utilizando un calibre luego se realiza una mejora en esta medición. La tensión de aceleración se determina con un multimetro UNI-T UT151E sobre el divisor resistivo $R_1$ y $R_2$ que tienen una relación 1:1000.
+
+
+
+\newpage
+\section{Métodos}
+
+
+En la Figura 3 se grafica el diametro $D$ de los anillos de interferencia en un rango de tensión, para algunas distancias interplanares estimadas, según las relaciones obtenidas en la sección anterior. De estos graficos se concluyen algunas características que se deben esperar en las mediciones
+
+\begin{itemize}
+  \item \textbf{Los diámetros disminuyen al aumentar la tensión.} Luego hay un rango de tensión mínimo para el cual los anillos están muy cercanos que se debe evita para poder medirlos.
+  \item \textbf{Los diámetros crecen al disminuir la distancia interplanar}. Luego se espera poder medir tan sólo interferencias asociadas a los anchos interplanares más grandes pues las interferencias desarecen de la pantalla para los menores pues sus primeros máximos son de diámetro mayor al diámetro de la superficie de proyección ($\approx 128\ mm$).
+  \end{itemize}
+
+Ambas condiciones anteriores determinan un rango de tensión en las cuales será posible medir el diámetro anular.\textbf{En base a estos gráficos se elige el rango de $3\ V$ a $5\ V$.}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.8]  
+      \begin{axis}[
+                  axis line style={very thick},
+            axis lines = left,
+            xlabel=Tensión aplicada,
+            ylabel = Diámetro anular,
+            y unit =D \ (m),
+            unit marking pre={\text{in }},
+            unit marking post={},
+            x unit = \Phi \ (kV) ]
+
+            
+            \addplot[thick,domain=1:5,blue]{0.256*(tan(2*asin(6.134/sqrt(x*1000))))}; 
+            \addplot[thick,domain=1:5,blue]{0.256*(tan(2*asin(2*6.134/sqrt(x*1000))))}; 
+            \addplot[thick,domain=2.3:5,blue]{0.256*(tan(2*asin(3*6.134/sqrt(x*1000))))}; 
+
+            
+    \end{axis} 
+
+    \draw [thick] (5.7,3.5)  node(A) [right] {$n=3$};
+    \draw [thick] (5.7,1.8)  node(B) [right] {$n=2$};
+    \draw [thick] (5.7,0.3)  node(C) [right] {$n=1$};
+
+    \draw [thick] (4,5) node() [right] {$d_1 \approx 100\ pm$};
+\end{tikzpicture}\hspace{0.8cm}
+\begin{tikzpicture}[scale=0.8]
+    \begin{axis}[
+                  axis line style={very thick},
+            axis lines = left,
+            xlabel=Tensión aplicada,
+            ylabel = Diámetro anular,
+            y unit =D \ (m),
+            unit marking pre={\text{in }},
+            unit marking post={},
+            x unit = \Phi \ (kV) ]
+
+            \addplot[thick,domain=1:5,red]{0.256*tan(2*asin(3.066/sqrt(x*1000)))}; 
+            \addplot[thick,domain=1:5,red]{0.256*tan(2*asin(2*3.066/sqrt(x*1000)))}; 
+            \addplot[thick,domain=2.3:5,red]{0.256*tan(2*asin(3*3.066/sqrt(x*1000)))}; 
+            
+            
+    \end{axis}
+
+    \draw [thick] (5.7,3.9)  node(A) [right] {$n=3$};
+    \draw [thick] (5.7,2)  node(B) [right] {$n=2$};
+    \draw [thick] (5.7,0.3)  node(C) [right] {$n=1$};
+
+
+    \draw [thick] (4,5) node() [right] {$d_2 \approx 200\ pm$};
+
+\end{tikzpicture}
+\centering
+\caption{Dependencia entre diametro del anillo de orden $n$ con la tensión aplicada. \textbf{Izquierda:} Diametro del anillo mayor asociado a la distancia interplanar menor. \textbf{Derecha:} Diametro del anillo menor asociado a la distancia interplanar mayor.}
+\label{fig:grafico1}
+\end{figure}
+
+
+
+
+
+
+%Otra posible forma de computar $d$ es usando la aproximación de ángulos pequeños en la ecuación \ref{eqn:trig} para obtener:
+
+%\begin{equation}
+%D/(4R) = tan(2\theta) \approx sen(2\theta) = 2sen(\theta)cos(\theta) \approx 2sen(\theta) \nonumber
+%\end{equation}
+
+%y reemplazando en la condición de Bragg se obtiene otra expresión para la distancia interplanar
+
+%\begin{equation} \label{eq:aprox}
+%\Rightarrow d = \frac{4nR\lambda}{D}
+%\end{equation}
+
+%De esta última relacion se ve que cuanto menor sea la distancia interplanar en cuestión mayor será el diámetro del anillo de interferencia asociado. Como se verá en la sección \ref{sec:mediciones}
+%sólo los primeros dos anillos serán apreciables de medición, quedando las distancias interplanares màs pequeñas $d_3, d_4, etc. $ fuera del alcance de este informe.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propagación de errores}
+
+Se realiza la propagación de errores desde las mediciones $\Phi$, $R$ y $D$ hacía la distancia interplanar $d$ en la expresión funcional. Analizando esta propagación se determina que el término que más pesa en ella es la incerteza en la medición del diámetro anular, término que vas a querer mejorar en el refinamiento que se propone en la próxima sección.
+ 
+\begin{equation}
+d_i = f(\Phi_i,D_i)  \nonumber
+\end{equation}
+
+\begin{equation}
+\delta d_i = g(\Phi_i, D_i) \nonumber
+\end{equation}
+
+
+\begin{equation}
+\delta d^2 = (\frac{\partial f}{\partial R})^2 \delta R^2 + (\frac{\partial f}{\partial D})^2 \delta D^2 + (\frac{\partial f}{\partial \lambda})^2 \delta \lambda^2  \nonumber
+\end{equation}
+
+\begin{equation}
+\delta d^2 = (D^2\delta R^2 + R^2\delta D^2)[\frac{\lambda cot(0.5arctan(D/4R))csc(0.5arctan(D/4R))}{D^2+16R^2}]^2 + \frac{\delta \lambda ^2}{[2sen(0,5 arctan(D/4R))]^2} \nonumber
+\end{equation}
+
+
+donde la longitud de onda también tiene una dependencia con la medición de tensión y distintas constantes según FFFF, obteniendo una propagación
+
+\begin{equation}
+\delta \lambda^2 = (\frac{1}{\sqrt{2me\Phi}})^2 (\delta h)^2 + (\frac{0.5h}{(2me\Phi)^{(3/2)}})^2\cdot ((2e\Phi)^2 \delta m^2 + (2m\Phi)^2 \delta e^2 + (2me)^2 \delta\Phi^2) \nonumber
+\end{equation} 
+
+\subsection{Refinamiento del proceso de medición}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.4]{imagen_intro.jpg}
+    \hspace{1cm}
+    \begin{tikzpicture}[scale = 0.8]
+    \begin{axis}[
+                  axis line style={very thick},
+            axis lines = left,
+            y unit = ,
+            unit marking pre={\text{in }},
+            unit marking post={},
+            x unit = ]
+       \addplot [red,thick,domain=0:1,samples=200,smooth]{-5*(x-0.5)^2};
+       \addplot [red,thick,domain=0:1,samples=200,smooth]{-x+0.25};
+    \end{axis}
+\end{tikzpicture}
+    
+     \caption{\textbf{Izquierda:} Fotografía digital en escala de grises invertida de un patrón de difracción de electrones por grafito policristalino a una tensión de aceleración de $4\ kV$. \textbf{Derecha:} Boceto del modelado del máximo de difracción y la interferencia de fondo.}
+    \end{figure}
+
+El proceso de medición sobre la pantalla de difracción con un calibre, como se realiza en primera instancia, tiene un error intrínseco asociado a la percepción del ojo humano. \textbf{Otra fuente de error surge del hecho de que los máximos de difracción son parte de un continuo de difracción debido a otras interferencias no asociadas a los planos de interés.} Si logramos obtener un gráfico de intensidades como el de la Figura 4 mediante una fotografía digital \textbf{podemos modelar la curva de máximo como una cuadrática, modelar la interferencia de fondo como una recta (ver Figura 1) y resolver para la posición original del máximos según}
+
+\begin{equation}
+(ax+b) + (c(x-x_0)^2) \nonumber  
+\end{equation}
+\begin{equation}
+\frac{d}{dx} \rightarrow a + 2c(x-x_o) = 0 \nonumber 
+\end{equation}
+\begin{equation}
+x = x_0 + \frac{a}{2c}
+\end{equation}
+
+onde $x_0$ es la posición real del máximo, $x$ la posición desplazada, $a$ la pendiente de la recta y $c$ el coeficiente de la parábola.
+En las siguientes secciones se explica como se analizan tales fotografías y que resultados se obtuvieron.
+
+\subsection{Centro de los anillos}
+Sobre la imagen es posible determinar el centro de los anillos de difracción realizando una esperanza ponderada por las intesidades sobre del total de los pixeles
+
+\begin{equation}
+  \overline{p_x} = \frac{\sum_{y=1}^{n}\sum_{x = 1}^{m} i(x,y)\cdot x}{\sum \sum i(x,y)}
+\end{equation}
+
+\begin{equation}
+  \overline{p_y} = \frac{\sum_{x=1}^{m}\sum_{y = 1}^{n} i(x,y)\cdot y}{\sum \sum i(x,y)}
+\end{equation}
+
+donde $x,y$ son las posiciones del pixel $p(x,y)$ cuya intensidad es $i(x,y)$ y $n,m$ son las cantidades de pixeles horizontales y verticales respectivamente. Este procedimiento se utiliza para la posición media de cada fotografía para determinar las curvas de intensidad como se explica en la siguiente sección.
+
+\subsection{Curvas de intensidad}
+Una vez determinado el centro, realizamos dos cortes transversales de intensidades que pasan por el centro como se muestra en la Figura 5. 
+
+\begin{figure}[h]
+    \begin{center}
+
+      \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.45\textwidth]{imagen_intro.jpg}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[red,ultra thick] (0.15,0.48) -- (0.82,0.48);
+        \draw[red,ultra thick] (0.5,0.1) -- (0.5,0.85);
+    \end{scope}
+  \end{tikzpicture}
+      \hspace{0.01cm}
+      \includegraphics[scale=0.16]{intensidad.png}
+    \end{center}
+    \caption{\textbf{Izquierda:} Dos cortes transversales de intensidades para un patrón de difracción. \textbf{Derecha:} Intensidades en función de pixel de posición.}
+    \label{fig:distanciasinterplanares}
+    \end{figure}
+
+
+Realizando el mismo proceso para distintas fotos se obtienen diferentes cortes que se pueden sumar punto por punto para obtener un gráfico final sobre el cual se pueden estimar pendientes de rectas para corregir los desplazamientos del máximos de interferencia como se muestra en la Figura 6. Previo a generar la suma de los distintos cortes \textbf{las imagenes son editadas tal que se elimine el centro saturado} como se muestra en la Figura 6. 
+
+Tomando un conjunto de muchas imagenes capturadas se suman sus intensidades para los distintos cortes transversales. Repitiendose para distintas tensiones aceleradoras se obtiene un conjunto de curvas sobre las cuales se puede medir los diámetros de los anillos de interferencia. En la Figura 6 se muestra la curva final para el anillo a $4\ kV$.
+
+%\begin{figure}[h]
+%    \begin{center}
+%
+%      \includegraphics[scale=0.48]{img1.png}
+%      \hspace{1cm}
+%      \includegraphics[scale=0.48]{img1_sesgada.png}
+%    \end{center}
+%    \caption{Patrones de intensidad para una tensión de aceleración de $4.5\ kV$ \textbf{Izquierda:} Patrón de intensidad para un corte transversal. \textbf{Derecha:} Mismo patrón de intensidad para el cuál se eliminó el centro saturado.}
+%    \label{fig:distanciasinterplanares}
+%    \end{figure}
+
+
+
+
+\begin{figure}[t]
+    \begin{center}
+
+      \includegraphics[scale=0.16]{int_prom.png}
+      \hspace{0.5cm}
+      \includegraphics[scale=0.16]{int_prom2.png}
+    \end{center}
+    \caption{\textbf{Izquierda:} Distintos cortes para fotografías de un mismo anillo a $4\ kV$ con intensidades varias. \textbf{Derecha:} Superposición de curvas de intensidad para el anillo de $4\ kV$.}
+    \label{fig:distanciasinterplanares}
+    \end{figure}
+
+\newpage
+\subsection{Ajuste Polinomial del Máximo}
+
+Para cada uno de los cortes de intensidad de cada una de las fotografías se puede aproximar la curva del máximo de difracción por una parábola utilizando métodos numéricos implementados en Octave. En la Figura 7 se muestra un caso para una de las fotografías del patrón a una tension aceleradora de $4.5\ kV$.
+
+\begin{figure}[h]
+    \begin{center}
+
+     
+      \includegraphics[scale=0.25]{ajuste.png}
+    \end{center}
+    \caption{Ajuste por parábolas de los máximos de difracción para la determinación del diámetro de los anillos.}
+    \label{fig:distanciasinterplanares}
+    \end{figure}
+
+El script implementado ajusta estas parábolas sobre un conjunto reducido de puntos del máximo y determina sus máximos donde se anula la derivada. La distancia entre los dos máximos nos da la distancia en pixeles entre los dos máximos.
+
+\subsection{Ajuste lineal de la interferencia de fondo}
+\begin{figure}[h]
+    \begin{center}
+
+     
+      \includegraphics[scale=0.25]{ajuste_recta.png}
+    \end{center}
+    \caption{Ajuste para la recta de fondo de la suma de intensidades de distintas fotografías de interferencias a una tensión fija.}
+    \label{fig:distanciasinterplanares}
+    \end{figure}
+
+Para los mismos cortes del caso anterior se realiza un ajuste lineal de la curva de fondo como se muestra en la Figura 8. Utilizando la pendiente de esta recta junto al coeficiente de la parábola del ajuste del máximo se propone la corrección
+\begin{equation}
+x = x_0 + \frac{a}{2c}
+\end{equation}
+donde $a$ es la pendiente de la recta, $c$ el coeficiente de la parábola y $x_0$ la posición original del máximo. 
+
+\subsection{Resultados}
+Para cada una de las 30 fotografías tomadas se realizaron dos cortes transversales de intensidades que cruzan por el centro de los anillos. Se obtuvieron así 60 curvas que se ajustaron por parábolas y se realizó la correción de fondo. En los Cuadros 4.1 y 4.2 se muestran los resultados promediados de este método enfrentados a los resultados obtenidos por medición directa con el calibre.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{0.94\textwidth}{XXXXXX}
+\toprule   
+ \multicolumn{3}{c}{\textbf{Distancia Interplanar Menor}}  & \multicolumn{3}{c}{\textbf{Distancia Interplanar Mayor}}  \\
+ \cmidrule(r){1-3}  \cmidrule(r){4-6} 
+  por calibre           & por fotografía  & Diferencia      & por calibre   & por fotografía  &Diferencia     \\ 
+\cmidrule(r){1-1}     \cmidrule(r){2-2}     \cmidrule(r){3-3} \cmidrule(r){4-4}  \cmidrule(r){5-5} \cmidrule(r){6-6}  
+ $128.9 $& $129.2$  & $0.3$                             & $233.2$          &  $220.7$ & $12.5$                               \\  \hline
+\bottomrule
+\end{tabularx}
+\caption{Comparación de los resultados de los distintos procesos de medición de las distancias interplanares del grafito policristalino.} 
+\label{tab:sim_b_2}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{0.94\textwidth}{XXXXXX}
+\toprule   
+ \multicolumn{3}{c}{\textbf{$\delta$ Distancia Interplanar Menor}}  & \multicolumn{3}{c}{\textbf{ $\delta$ Distancia Interplanar Mayor}}  \\
+ \cmidrule(r){1-3}  \cmidrule(r){4-6} 
+  por calibre           & por fotografía  & Diferencia      & por calibre   & por fotografía  &Diferencia     \\ 
+\cmidrule(r){1-1}     \cmidrule(r){2-2}     \cmidrule(r){3-3} \cmidrule(r){4-4}  \cmidrule(r){5-5} \cmidrule(r){6-6}  
+ $14.6 $& $7.2$  & $7.4$                              & $37.1$          &  $8.6$ & $28.5$                                \\  \hline
+\bottomrule
+\end{tabularx}
+\caption{Comparación de los resultados de los distintos procesos de medición de las distancias interplanares del grafito policristalino.} 
+\label{tab:sim_b_2}
+\end{table}
+
+\section{Análisis de los resultados}
+En los Cuadros 4.1 y 4.2 se muestran los resultados de las distancias interplanares del método fotográfico propuesto contra las obtenidas por el método de medición con calibre. La diferencia en la menor de las distancias interplanares no parece ser muy significativa, aunque se redujo significativamente la incerteza de este valor. \textbf{La diferencia en la mayor de las distancias interplanares, la asociada al anillo menor, se corrigió por unos $12\ pm$ y redujo su incerteza en $28\ pm$} lo que representa una mejora significativa. Interpretamos esta mejora en el sentido de que \textbf{este método ataca directamente al parámetro que más domina el error en la propagación de errores hacía la distancia interplanar, la medición en pantalla de los diámetros anulares y el corrimiento por la recta de fondo.}
+
+Destacamos que esta mejora se obtiene tan sólo al analizar una porción muy reducida de las imágenes, sólo se analizan dos cortes por imágenes, \textbf{el método puede mejorar su precisión utilizando un algoritmo más complejo para analizar todos los datos} y usando más tiempo de cómputo. Sin embargo \textbf{esta primera aproximación nos da una noción de como mejoran los resultados.}
+
+Los resultados así obtenidos presentan incertezas que pueden ser aceptables o inaceptables dependiendo del uso en que se apliquen los datos, lo relevante de este informe es la validación del método propuesto para mejorar la medición.
+
+
+
+\newpage
+\section{Anexo - Análisis del efecto de la cantidad de planos sobre el ancho de los máximos de interferencia}
+
+No es posible aumentar la cantidad de planos de la muestra de grafito como método para mejorar la precisión puesto que no es posible utilizar otra muestra en el instrumental. En un proceso de rediseño del experimento, suponiendo que lo anterior sea posible, \textbf{nos interesa mostrar como varía el ancho $D$ de los anillos en función de esta cantidad de planos.} La intensidad resultante para una interferencia con muchas ranuras tiene la forma 
+
+\begin{equation}
+I = (A \cdot \frac{sen(N\cdot \Delta \Phi/2)}{sen(\Delta \Phi/2)})^2
+\end{equation}
+
+donde $N$ es el número de fuentes que asociamos a la cantidad de planos y $\Delta \Phi$ el desfasaje. Los máximos están donde $\Delta \Phi = 2n\pi$ con $n = 0,1,2, ...$ Luego, si $\Delta \Phi$ es la distancia entre dos máximos, podemos expresar el 'ancho angular' de un máximo como
+
+\begin{equation}
+\delta \Phi = \Delta \Phi / N
+\end{equation}
+
+de modo que la varación radial se obtenga al multiplicar por el radio $R$ de la esfera
+
+\begin{equation}
+\delta r = \delta \Phi \cdot R = \frac{\Delta \Phi}{N} \cdot R 
+\end{equation}
+\begin{equation}
+\Rightarrow \delta D = 2 \delta r = s \frac{\Delta \Phi}{N} \cdot R
+\end{equation}
+
+donde $\delta D$ es el diámetro del máximo que se ve en la pantalla que varía como $\delta D \downarrow$ cuando $N \uparrow$ la cantidad de planos aumenta. En la Figura 9 se muestran como esto ocurre conceptualmente. \textbf{Queda entonces entendido como en un proceso de rediseño del experimento, aumentar la cantidad de planos puede mejorar la calidad de la medición reduciendo la incerteza en el término que más contribuye al error final, el error de la medición del diámetro en la pantalla que asociamos con el ancho del máximo.}
+
+\vspace{1cm}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[scale = 1.2,baseline=(current axis.outer east)]
+    \begin{axis}[
+                  axis line style={very thick},
+            axis lines = left,xlabel=$\Phi\ (rad)$,
+  ylabel=$I_{REL.}$]
+
+            \addplot[domain=-0.5*pi:2.5*pi,red,samples = 600,thick]{(sin(4*deg(x)/2)/sin(deg(x)/2))^2}; 
+           \addplot[domain=-0.5*pi:2.5*pi,blue,samples = 600,thick]{(sin(7*deg(x)/2)/sin(deg(x)/2))^2}; 
+           
+            
+    \end{axis}
+    %\draw[dashed] (0,0) -- (0,6);
+    \draw [latex-latex] (1.1,3) -- (5.7,3);\draw[thick] (3.5,3) node[above]{$\Delta \Phi$};
+    \draw [latex-latex,red,thick] (1.1,-0.5) -- (2.2,-0.5) node[below]{$\delta \Phi$};
+    \draw [latex-latex,blue,thick] (1.1,-1) -- (1.9,-1) node[below]{$\delta \Phi$}; 
+
+    \draw [blue,thick] (5.4,5) node[left] {$N = 7$};
+    \draw [red,thick] (5.4,2) node[left] {$N = 4$};
+\end{tikzpicture}
+\end{center}
+\caption{Ejemplo de la influencia del aumento de los planos en el ancho angular de los máximos de interferencia.}
+\label{fig:aumento_planos}
+\end{figure}
+
+
+
+\end{document}
